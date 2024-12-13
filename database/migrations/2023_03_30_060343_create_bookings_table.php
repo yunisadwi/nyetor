@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('car_id');
+            $table->foreignId('motor_id')->constrained(); // Menambahkan relasi dengan tabel motor
             $table->string('nama_lengkap');
             $table->string('alamat_lengkap');
             $table->string('nomer_wa');
+            $table->date('tanggal_penyewaan')->nullable()->default(now()->toDateString()); // Menambahkan default untuk tanggal
+            $table->integer('durasi_sewa')->default(1); // Menambahkan default value untuk durasi sewa
             $table->timestamps();
         });
     }

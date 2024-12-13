@@ -3,16 +3,12 @@
 @section('content')
 <div
         class="hero inner-page"
-        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')"
+        style="background-image: url('{{ asset('frontend/images/banner.png') }}')"
       >
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-5">
               <div class="intro">
-                <h1><strong>About</strong></h1>
-                <div class="custom-breadcrumbs">
-                  <a href="index.html">Home</a> <span class="mx-2">/</span>
-                  <strong>About</strong>
                 </div>
               </div>
             </div>
@@ -20,7 +16,7 @@
         </div>
       </div>
 
-      <div class="site-section bg-light" id="contact-section">
+      <div class="site-section" style="background-color: #ADD8E6;">
         <div class="container">
           <div class="row justify-content-center text-center">
             <div class="col-7 text-center mb-5">
@@ -50,7 +46,7 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div> 
+                    </div>
                 </div><!-- /.container-fluid -->
             </div>
         @endif
@@ -59,7 +55,7 @@
           <div class="row">
             <div class="col-lg-8 mb-5">
               <form action="{{ route('contact.store') }}" method="post">
-                @csrf 
+                @csrf
                 <div class="form-group row">
                   <div class="col-md-6 mb-4 mb-lg-0">
                     <input

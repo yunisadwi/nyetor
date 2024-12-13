@@ -39,10 +39,10 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('admin.cars.index') }}" class="nav-link">
-                    <i class="nav-icon fa fa-car"></i>
+                <a href="{{ route('admin.motors.index') }}" class="nav-link">
+                    <i class="nav-icon fa fa-motor"></i>
                     <p>
-                        {{ __('Mobil') }}
+                        {{ __('Motor') }}
                     </p>
                 </a>
             </li>

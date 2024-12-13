@@ -16,8 +16,8 @@ class Type extends Model
         return $this->hasMany(Blog::class);
     }
 
-    public function cars()
+    public function motors()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Motor::class);
     }
 }

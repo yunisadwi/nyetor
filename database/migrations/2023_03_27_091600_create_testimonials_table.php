@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('pekerjaan');
-            $table->text('pesan');
-            $table->text('profile');
+            $table->string('image'); // Hanya menyimpan URL gambar
             $table->timestamps();
         });
     }

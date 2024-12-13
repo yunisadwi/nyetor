@@ -21,8 +21,8 @@
                         <th>No</th>
                         <th>Nama Lengkap</th>
                         <th>Alamat Lengkap</th>
-                        <th>Nomer HP/Whatsap</th>
-                        <th>Mobil</th>
+                        <th>Nomer HP/Whatsapp</th>
+                        <th>Motor</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -35,7 +35,7 @@
                                 <td>
                                     <a href="telp:{{ $booking->nomer_wa }}">{{ $booking->nomer_wa }}</a>
                                 </td>
-                                <td>{{ $booking->car->nama_mobil }}</td>
+                                <td>{{ $booking->motor->nama_motor }}</td>
                                 <td>
                                 <div class="btn-group btn-group-sm">
                                     <form onclick="return confirm('are you sure !')" action="{{ route('admin.bookings.destroy', $booking) }}"
@@ -73,7 +73,7 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
 @endpush
 
-@push('script-alt') 
+@push('script-alt')
     <script
         src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="

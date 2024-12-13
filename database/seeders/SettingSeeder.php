@@ -14,12 +14,12 @@ class SettingSeeder extends Seeder
     public function run(): void
     {
         Setting::create([
-            'alamat' => 'lombok indonesia',
-            'phone' => '0819988445',
-            'email' => 'sewamobil@example.com',
-            'footer_description' => 'sewa mobil terpercaya',
-            'tentang_perusahaan' => 'membantu anda menyewa mobil impian',
-            'sejarah_perusahaan' => 'Berdiri sejak tahun penjajahan lol',
+            'alamat' => 'Bandung Timur',
+            'phone' => '0878184747396',
+            'email' => 'nyetormotor@gmail.com',
+            'footer_description' => 'sewa motor terpercaya',
+            'tentang_perusahaan' => 'membantu perjalanan',
+            'sejarah_perusahaan' => 'Berdiri sejak tahun 2024',
             'facebook' => 'https://www.facebook.com/',
             'instagram' => 'https://www.instagram.com/',
             'linkedin' => 'https://www.linkedin.com/',

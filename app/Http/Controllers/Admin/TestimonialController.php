@@ -6,7 +6,6 @@ use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use App\Http\Requests\Admin\TestimonialRequest;
 
 class TestimonialController extends Controller
 {
@@ -15,8 +14,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::get();
-
+        $testimonials = Testimonial::all(); // Mengambil semua testimonial
         return view('admin.testimonials.index', compact('testimonials'));
     }
 
@@ -31,61 +29,22 @@ class TestimonialController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TestimonialRequest $request)
+    public function store(Request $request)
     {
-        if($request->validated())
-        {
-            $profile = $request->file('profile')->store(
-                'testimonial/profile', 'public'
-            );
-
-            Testimonial::create($request->except('profile') + ['profile' => $profile]);
-        }
-
-        return redirect()->route('admin.testimonials.index')->with([
-            'message' => 'data berhasil di buat',
-            'alert-type' => 'success'
+        // Validasi hanya untuk file gambar
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Testimonial $testimonial)
-    {
-        //
-    }
+        // Simpan file gambar
+        $image = $request->file('image')->store('testimonial', 'public');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Testimonial $testimonial)
-    {
-        return view('admin.testimonials.edit', compact('testimonial'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(TestimonialRequest $request, Testimonial $testimonial)
-    {
-        if($request->validated())
-        {
-            if($request->profile) {
-                File::delete('storage/'. $testimonial->profile);
-                $profile = $request->file('profile')->store(
-                    'testimonial/profile' , 'public'
-                );
-
-                $testimonial->update($request->except('profile') + ['profile' => $profile]);
-            }else {
-                $testimonial->update($request->validated());
-            }
-        }
+        // Buat testimonial dengan hanya menyimpan path gambar
+        Testimonial::create(['image' => $image]);
 
         return redirect()->route('admin.testimonials.index')->with([
-            'message' => 'berhasil di buat',
-            'alert-type' => 'info'
+            'message' => 'Testimoni berhasil ditambahkan',
+            'alert-type' => 'success',
         ]);
     }
 
@@ -94,12 +53,13 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        File::delete('storage/'. $testimonial->profile);
+        // Hapus file gambar dari storage
+        File::delete('storage/' . $testimonial->image);
         $testimonial->delete();
 
         return redirect()->back()->with([
-            'message' => 'berhasil di hapus',
-            'alert-type' => 'danger'
+            'message' => 'Testimoni berhasil dihapus',
+            'alert-type' => 'danger',
         ]);
     }
 }

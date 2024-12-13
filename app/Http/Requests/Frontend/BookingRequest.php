@@ -22,7 +22,7 @@ class BookingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'car_id' => 'required',
+            'motor_id' => 'required',
             'nama_lengkap' => 'required',
             'alamat_lengkap' => 'required',
             'nomer_wa' => 'required'

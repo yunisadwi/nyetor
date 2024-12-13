@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>Nyetor Motor</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,6 +13,8 @@
       rel="stylesheet"
     />
 
+    <link rel="icon" href="{{ asset('frontend/images/WA_PP.png') }}" type="image/png">
+
     <link rel="stylesheet" href="{{ asset('frontend/fonts/icomoon/style.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" />
@@ -22,6 +24,25 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/fonts/flaticon/font/flaticon.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/aos.css') }}" />
+
+    <!-- Tambahkan CSS untuk navbar -->
+    <style>
+      /* Menyesuaikan padding dan posisi navbar */
+      .site-navbar {
+  padding-top: 15px !important;
+  padding-bottom: 10px !important;
+  margin-top: -20px !important;
+}
+
+
+      /* Menyesuaikan posisi teks link navbar */
+      .site-navbar .site-menu .nav-link {
+        padding-top: 8px; /* Menambah jarak atas untuk link */
+        padding-bottom: 8px; /* Menambah jarak bawah untuk link */
+        line-height: 1.5; /* Menyesuaikan tinggi baris */
+      }
+    </style>
+
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
@@ -42,9 +63,6 @@
         <div class="container">
           <div class="row align-items-center position-relative">
             <div class="col-3">
-              <div class="site-logo">
-                <a href="{{ url('/') }}"><strong>CarRental</strong></a>
-              </div>
             </div>
 
             <div class="col-9 text-right">
@@ -61,9 +79,8 @@
                   <li class="active">
                     <a href="{{ url('/') }}" class="nav-link">Home</a>
                   </li>
-                  <li><a href="{{ url('daftar-mobil') }}" class="nav-link">Daftar Mobil</a></li>
+                  <li><a href="{{ url('daftar-motor') }}" class="nav-link">Daftar Motor</a></li>
                   </li>
-                  <li><a href="{{ url('blog') }}" class="nav-link">Blog</a></li>
                   <li><a href="{{ url('tentang-kami') }}" class="nav-link">Tentang Kami</a></li>
                   <li><a href="{{ url('kontak') }}" class="nav-link">Kontak</a></li>
                 </ul>
@@ -75,110 +92,53 @@
 
       @yield('content')
 
-      <div class="site-section bg-primary py-5">
+      <div class="site-section" style="background-color: #00bfff ;">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 mb-4 mb-md-0">
-              <h2 class="mb-0 text-white">Apa yang kalian tunggu ?</h2>
+              <h2 class="mb-0 text-white">Apa yang kalian tunggu?</h2>
               <p class="mb-0 opa-7">
-                Buruan sewa mobil sekarang sebelum harga bbm naik
+                Buruan sewa motor sekarang di Nyetor Motor!!!
               </p>
             </div>
             <div class="col-lg-5 text-md-right">
-              <a href="#" class="btn btn-primary btn-white">Sewa Sekarang</a>
-            </div>
+    <a href="daftar-motor" class="btn btn-primary btn-blue" style="background-color: #1e90ff; color: white;">Sewa Sekarang</a>
+</div>
+
           </div>
         </div>
       </div>
 
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
+      <footer class="site-footer" style="background-color: #ADD8E6; color: white;">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">About Us</h2>
-              <p>
-               {{ $setting->footer_description }}
-              </p>
-              <ul class="list-unstyled social">
-                <li>
-                  <a href="{{ $setting->facebook }}"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->instagram }}"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->twitter }}"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->linkedin }}"><span class="icon-linkedin"></span></a>
-                </li>
-              </ul>
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <ul class="list-unstyled social">
+                    <li>
+                        <a href="{{ $setting->facebook }}"><span class="icon-facebook"></span></a>
+                    </li>
+                    <li>
+                        <a href="{{ $setting->instagram }}"><span class="icon-instagram"></span></a>
+                    </li>
+                    <li>
+                        <a href="{{ $setting->twitter }}"><span class="icon-twitter"></span></a>
+                    </li>
+                    <li>
+                        <a href="{{ $setting->linkedin }}"><span class="icon-linkedin"></span></a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-lg-8 ml-auto">
-              <div class="row">
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Quick Links</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Resources</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Support</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Company</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-              <div class="border-top pt-5">
-                <p>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  All rights reserved | This template is made with
-                  <i class="icon-heart text-danger" aria-hidden="true"></i> by
-                  <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </footer>
     </div>
+    <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+            <div class="border-top pt-5"></div>
+        </div>
+    </div>
+</footer>
+
+
 
     <script src="{{ asset('frontend/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>

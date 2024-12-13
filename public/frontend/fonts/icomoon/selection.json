@@ -10866,14 +10866,14 @@
         "isMulticolor2": false,
         "tags": [
           "automobile",
-          "car"
+          "motor"
         ],
         "defaultCode": 61881,
         "grid": 14
       },
       "attrs": [],
       "properties": {
-        "name": "automobile, car",
+        "name": "automobile, motor",
         "id": 400,
         "order": 1256,
         "prevSize": 28,

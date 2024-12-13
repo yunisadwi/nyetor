@@ -11,8 +11,8 @@ class Booking extends Model
 
     protected $guarded = ['id'];
 
-    public function car()
+    public function motor()
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(Motor::class);
     }
 }
