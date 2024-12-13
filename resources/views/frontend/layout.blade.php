@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Nyetor Motor</title>
+    <title>Nyetor - Nyewain Motor</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -98,7 +98,7 @@
             <div class="col-lg-7 mb-4 mb-md-0">
               <h2 class="mb-0 text-white">Apa yang kalian tunggu?</h2>
               <p class="mb-0 opa-7">
-                Buruan sewa motor sekarang di Nyetor Motor!!!
+                Buruan sewa motor sekarang di Nyewain Motor!!!
               </p>
             </div>
             <div class="col-lg-5 text-md-right">
